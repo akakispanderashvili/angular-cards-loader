@@ -1,0 +1,8 @@
+<div class="container grid">
+  <div
+    class="cube"
+    *ngFor="let cube of cubes; let i = index"
+    [ngClass]="{ hovered: cube.isHovered }"
+    (mouseenter)="onMouseEnter(cube)"
+  ></div>
+</div>

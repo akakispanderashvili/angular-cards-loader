@@ -1,0 +1,34 @@
+<div class="container">
+  <button (click)="loadUsers()">Load Users</button>
+  <p *ngIf="loading">Loading...</p>
+
+  <p *ngIf="cardsShown">{{ users | usernames }}</p>
+
+  <div class="cards" *ngIf="cardsShown">
+    <div *ngFor="let user of users">
+      <div
+        class="card"
+        [ngClass]="{
+          clickedCard: user.clicked,
+          active: user.status === 'active',
+          inactive: user.status === 'inactive',
+          deleted: user.status === 'deleted'
+        }"
+        (click)="user.clicked = !user.clicked"
+      >
+        <p>{{ user.firstName }} {{ user.lastName }}</p>
+        <p>About {{ user.firstName }}</p>
+        <p>{{ user.birthDate | date : "yyyy" | ageCalculator }} years old</p>
+        <p
+          [ngClass]="{
+            activeStatus: user.status === 'active',
+            inactiveStatus: user.status === 'inactive',
+            deletedStatus: user.status === 'deleted'
+          }"
+        >
+          {{ user.status }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
