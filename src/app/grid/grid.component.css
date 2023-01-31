@@ -8,7 +8,9 @@
 
 }
 .grid {
+  padding: 30px;
   padding-top: 300px;
+
 }
 .cube {
   background-color: green;

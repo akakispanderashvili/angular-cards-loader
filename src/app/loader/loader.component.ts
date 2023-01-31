@@ -46,6 +46,7 @@ export class LoaderComponent {
       clicked: false,
     },
   ];
+
   loadUsers() {
     this.loading = true;
 
