@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cube } from '../interfaces/cubes.interface';
 
 @Component({
   selector: 'app-grid',
@@ -6,18 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./grid.component.css'],
 })
 export class GridComponent {
-  // cubes: any[] = Array(64).fill({ isHovered: false });
-  cubes: any[] = [];
+  cubes: Cube[] = [];
   constructor() {
     for (let i = 0; i < 64; i++) {
       this.cubes.push({ isHovered: false });
     }
   }
-  onMouseEnter(cube: { isHovered: boolean }) {
+  onMouseEnter(cube: Cube) {
     cube.isHovered = !cube.isHovered;
   }
-
-  // onMouseLeave(cube: { isHovered: boolean }) {
-  //   cube.isHovered = false;
-  // }
 }

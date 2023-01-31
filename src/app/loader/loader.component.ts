@@ -49,11 +49,16 @@ export class LoaderComponent {
 
   loadUsers() {
     this.loading = true;
+    const promise = new Promise((resolve) => {
+      setTimeout(() => {
+        this.users = this.users;
+        resolve(this.users);
+      }, 3000);
+    });
 
-    setTimeout(() => {
-      this.users = this.users;
+    promise.then((users) => {
       this.loading = false;
       this.cardsShown = true;
-    }, 3000);
+    });
   }
 }
