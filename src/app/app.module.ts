@@ -6,6 +6,8 @@ import { GridComponent } from './grid/grid.component';
 import { LoaderComponent } from './loader/loader.component';
 import { AgeCalculatorPipe } from './pipes/age-calculator.pipe';
 import { UsernamesPipe } from './pipes/usernames.pipe';
+import { BassicAttributeDirective } from './grid/directives/basic-attribute.directive';
+import { DyerDirective } from './grid/directives/dyer.directive';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { UsernamesPipe } from './pipes/usernames.pipe';
     LoaderComponent,
     AgeCalculatorPipe,
     UsernamesPipe,
+    BassicAttributeDirective,
+    DyerDirective,
   ],
   imports: [BrowserModule],
   providers: [],

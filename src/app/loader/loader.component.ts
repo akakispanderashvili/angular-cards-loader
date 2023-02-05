@@ -51,7 +51,6 @@ export class LoaderComponent {
     this.loading = true;
     const promise = new Promise((resolve) => {
       setTimeout(() => {
-        this.users = this.users;
         resolve(this.users);
       }, 3000);
     });
@@ -59,6 +58,7 @@ export class LoaderComponent {
     promise.then((users) => {
       this.loading = false;
       this.cardsShown = true;
+      this.users = this.users;
     });
   }
 }

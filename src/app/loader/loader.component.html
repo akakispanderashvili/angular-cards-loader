@@ -1,7 +1,7 @@
 <div class="container">
-  <button (click)="loadUsers()">Load Users</button>
+  <button basicAttribute (click)="loadUsers()">Load Users</button>
   <p *ngIf="loading">Loading...</p>
-  <p *ngIf="cardsShown">{{ users | usernames }}</p>
+  <p appDyerDirective *ngIf="cardsShown">{{ users | usernames }}</p>
 
   <div class="cards" *ngIf="cardsShown">
     <div *ngFor="let user of users">
